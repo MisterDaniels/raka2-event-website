@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 :root {
-    --primary-color: #6176ff
+    --primary-color: #6176ff;
+    --not-available-color: #e0e0e0;
 }
 
 * {
@@ -39,6 +40,11 @@ header {
 .links a.active {
     font-weight: bold;
     color: var(--primary-color);
+}
+
+.links a.deactivate {
+    color: var(--not-available-color);
+    pointer-events: none;
 }
 
 .links a:hover {
@@ -163,4 +169,22 @@ button[type="submit"]{
     margin-top: 32px;
     width: 100%;
     font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover{
+    background-color: rgb(4, 163, 4);
+}
+
+button[type="button"]{
+    padding: 8px 32px;
+    background-color: white;
+    color: black;
+    border: solid 1px;
+    border-radius: 4px;
+    border-color: black;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
 }

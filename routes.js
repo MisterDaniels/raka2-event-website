@@ -1,10 +1,17 @@
 const express = require('express')
 const routes = express.Router()
 const cadastro = require('./cadastro')
+const login = require('./src/user/login')
 
 routes.get('/', function (req, res) {
-    return res.redirect('/cadastro')
+    return res.redirect('/entrar')
 })
+
+routes.get('/entrar', function (req, res) {
+    return res.render('login/entrar')
+});
+
+routes.post('/entrar', login.post);
 
 routes.get('/cadastro', function (req, res) {
     return res.render('cadastro/create')

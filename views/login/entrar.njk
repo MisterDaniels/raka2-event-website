@@ -1,0 +1,40 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <script>
+        $('.links a:nth-child(2)').removeClass("active");
+        $('.links a:nth-child(3)').removeClass("active");
+        $('.links a:nth-child(1)').attr("active");
+    </script>
+
+    <form class="card" method="POST" action="/entrar">
+        <section class="avatar" style="background: url(https://source.unsplash.com/collection/4296651/500x500) no-repeat center center / cover"></section>
+
+        <section class="details" style="">
+            <h3>ENTRE NA SUA CONTA</h3>
+
+            <div class="item">
+                <div>CPF</div>
+                <div>
+                    <input id="cpf" type="text" name="cpf" placeholder="Insira o CPF!" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" onchange="formataCPF(this)">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Senha</div>
+                <div>
+                    <input type="password" name="senha" placeholder="Insira sua Senha!">
+                </div>
+            </div>
+
+            <button type="submit">Entrar</button>
+
+            <button type="button" onclick="location.href=/cadastro">Cadastrar</button>
+        
+        </section>     
+    <script>
+        $('#cpf').mask('000.000.000-00', {reverse: true});
+    </script>
+    </form>
+{% endblock content %}
