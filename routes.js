@@ -16,4 +16,9 @@ routes.get('/certificado', function (req, res) {
     return res.send('certificado')
 })
 
+routes.get('/confirmacao/:palestra', function (req, res) {
+    var lecture = req.params.palestra;
+    return res.send(`Confirmação ${lecture}`);
+});
+
 module.exports = routes

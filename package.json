@@ -5,18 +5,19 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "certificate-generate": "qrcode "
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cristianpenteado/hackaton.git"
+    "url": "git+https://github.com/douglasscaini/raka2.git"
   },
-  "author": "Cristian Penteado, Douglas Scaini, João Marcelo, Matheus Brandalise",
+  "author": "Cristian Penteado, Douglas Scaini, João Marcelo, Matheus Brandalise, Daniel Silva",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cristianpenteado/hackaton/issues"
+    "url": "https://github.com/douglasscaini/raka2/issues"
   },
-  "homepage": "https://github.com/cristianpenteado/hackaton#readme",
+  "homepage": "https://github.com/douglasscaini/raka2#readme",
   "devDependencies": {
     "nodemon": "^2.0.2",
     "sequelize-cli": "^5.5.1"
