@@ -7,10 +7,6 @@ routes.get('/', function (req, res) {
 })
 
 routes.get('/cadastro', function (req, res) {
-    return res.render('cadastro/index')
-})
-
-routes.get('/cadastro/create', function (req, res) {
     return res.render('cadastro/create')
 })
 

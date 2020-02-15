@@ -10,7 +10,7 @@
             <div class="item">
                 <div>CPF</div>
                 <div>
-                    <input type="text" name="cpf" placeholder="Insira o CPF!">
+                    <input id="cpf" type="text" name="cpf" placeholder="Insira o CPF!" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" onchange="formataCPF(this)">
                 </div>
             </div>
 
@@ -51,7 +51,9 @@
             </div>
 
             <button type="submit">Salvar</button>
-        </section>
-
+        </section>     
+    <script>
+        $('#cpf').mask('000.000.000-00', {reverse: true});
+    </script>
     </form>
 {% endblock content %}
