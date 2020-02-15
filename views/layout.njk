@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        {% block head %}
+            <title>Expo Videira</title>
+        {% endblock %}
+
+        <link rel="stylesheet" href="/style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <div class="links">
+                <a href="/" class="active">Cadastro</a>
+                <a href="/certificado">Certificado</a>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+    </body>
+
+</html>

@@ -1,0 +1,57 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+    <form class="card" method="POST" action="/cadastro">
+        <section class="avatar" style="background: url(https://source.unsplash.com/collection/4296651/500x500) no-repeat center center / cover"></section>
+
+        <section class="details" style="">
+            <h3>Novo Cadastro</h3>
+
+            <div class="item">
+                <div>CPF</div>
+                <div>
+                    <input type="text" name="cpf" placeholder="Insira o CPF!">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Nome</div>
+                <div>
+                    <input type="text" name="nome" placeholder="Insira o NOME!">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Cidade</div>
+                <div>
+                    <input type="text" name="cidade" placeholder="Insira o Cidade">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Estado</div>
+                <div>
+                    <input type="text" name="estado" placeholder="Insira o Estado">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Data de Nascimento</div>
+                <div>
+                    <input type="date" name="data">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Gênero</div>
+                <div>
+                    <span><input type="radio" name="genero" value="M" checked>Masculino</span>
+                    <span><input type="radio" name="genero" value="F">Feminino</span>
+                </div>
+            </div>
+
+            <button type="submit">Salvar</button>
+        </section>
+
+    </form>
+{% endblock content %}
