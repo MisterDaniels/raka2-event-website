@@ -23,8 +23,9 @@ routes.get('/certificado', function (req, res) {
     return res.send('certificado')
 })
 
-routes.get('/confirmacao/:palestra', function (req, res) {
+routes.get('/confirmacao/:palestra/:codigoAutenticacao', function (req, res) {
     var lecture = req.params.palestra;
+    var authenticationCode = req.params.codigoAutenticacao;
     return res.send(`Confirmação ${lecture}`);
 });
 
