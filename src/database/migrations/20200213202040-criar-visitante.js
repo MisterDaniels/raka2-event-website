@@ -2,9 +2,9 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('users',
+    return queryInterface.createTable('Visitantes',
       {
-        cpf: {
+        id: {
           type: Sequelize.STRING,
           primaryKey: true,
           autoIncrement: false,
@@ -22,25 +22,24 @@ module.exports = {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        data: {
+        data_nascimento: {
           type: Sequelize.DATE,
           allowNull: false
         },
-        genero: {
+        sexo: {
           type: Sequelize.STRING,
           allowNull: false
         }
+      },{
+        // disable the modification of table names; By default, sequelize will automatically
+        // transform all passed model names (first parameter of define) into plural.
+        // if you don't want that, set the following
+        freezeTableName: true,
       });
 
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.dropTable('users');
-    */
+      return queryInterface.dropTable('visitantes');
   }
 };
