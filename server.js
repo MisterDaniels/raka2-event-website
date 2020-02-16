@@ -16,6 +16,8 @@ nunjucks.configure('views', {
     noCache: true
 })
 
+require('./src/database')
+
 server.listen(5000, function () {
     console.log('server is running')
 })
