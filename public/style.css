@@ -68,7 +68,7 @@ header {
 
 /*=== CARD ===*/
 
-.card {
+.custom-card {
     background-color: whitesmoke;
     width: 800px;
     min-height: 400px;
