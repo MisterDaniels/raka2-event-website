@@ -8,7 +8,9 @@ exports.get = function (req, res) {
         codigoAutenticacao);
 
     if (validacaoCodigo === true) {
-        return res.render('entrar/entrar');
+        return res.render('entrar/entrar', {
+            palestra: palestra
+        });
     } else {
         return res.render('404');
     }

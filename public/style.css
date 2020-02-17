@@ -176,7 +176,7 @@ button[type="submit"]:hover{
     background-color: rgb(4, 163, 4);
 }
 
-button[type="button"]{
+button[type="custom-button"]{
     padding: 8px 32px;
     background-color: white;
     color: black;
