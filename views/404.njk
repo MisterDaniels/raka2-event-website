@@ -1,0 +1,22 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <script>
+        $('.links a:nth-child(1)').removeClass("active");
+        $('.links a:nth-child(2)').removeClass("active");
+        $('.links a:nth-child(3)').removeClass("active");
+    </script>
+
+    <div class="row align-items-center">
+        <div class="card text-center col-sm-12" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">404</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Parece que essa página não existe</h6>
+                <p class="card-text">Desculpe, mas essa página não está disponível.</p>
+                <a href="/entrar" class="card-link">Voltar para o inicio</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
