@@ -1,5 +1,4 @@
 const Visitante = require('../models/Visitante')
-const Sequelize = require('sequelize') 
 
 module.exports = {
     async store(req, res) {
@@ -13,7 +12,6 @@ module.exports = {
 
         if(containsId != undefined){
             if(containsId.dataValues.id == id){
-                console.log('Este CPF já foi cadastrado')
                 return res.json({erro: 'Este CPF já foi cadastrado'})
             }
         }
