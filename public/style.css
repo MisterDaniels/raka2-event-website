@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 :root {
     --primary-color: #6176ff;
+    --primary-color: #6176ff;
+    --not-available-color: #e0e0e0;
 }
 
 * {
@@ -41,6 +43,11 @@ header {
     color: var(--primary-color);
 }
 
+.links a.deactivate {
+    color: var(--not-available-color);
+    pointer-events: none;
+}
+
 .links a:hover {
     color: var(--primary-color);
 }
@@ -62,7 +69,7 @@ header {
 
 /*=== CARD ===*/
 
-.card {
+.custom-card {
     background-color: whitesmoke;
     width: 700px;
     min-height: 500px;
@@ -164,4 +171,22 @@ button[type="submit"] {
     width: 100%;
     font-size: 16px;
     font-weight: normal;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover{
+    background-color: #6160ff;
+}
+
+button[type="custom-button"]{
+    padding: 8px 32px;
+    background-color: white;
+    color: black;
+    border: solid 1px;
+    border-radius: 4px;
+    border-color: black;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
 }
