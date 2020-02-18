@@ -1,6 +1,15 @@
 {% extends 'layout.njk' %}
 
 {% block content %}
+
+    <script>
+        $('.links a:nth-child(1)').removeClass("active");
+        $('.links a:nth-child(3)').removeClass("active");
+        $('.links a:nth-child(2)').addClass("active");
+    </script>
+
+    <form class="custom-card" method="POST" action="/cadastro">
+        <section class="avatar" style="background: url(https://source.unsplash.com/collection/4296651/500x500) no-repeat center center / cover"></section>
     <form class="card" method="POST" action="/cadastro">
         <section class="avatar" style="background: url(https://source.unsplash.com/collection/9548716/700x700) no-repeat center center / cover"></section>
 
@@ -49,7 +58,7 @@
                     <span><input type="radio" name="sexo" value="F">Feminino</span>
                 </div>
             </div>
-
+            
             <button type="submit">Salvar</button>
         </section>     
     <script>
