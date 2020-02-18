@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 :root {
-    --primary-color: #6176ff
+    --primary-color: #6176ff;
 }
 
 * {
@@ -17,7 +17,7 @@ body {
 header {
     background-color: whitesmoke;
     width: 100%;
-    padding: 32px;
+    padding: 22px;
     text-align: center;
     box-sizing: border-box;
 }
@@ -57,23 +57,24 @@ header {
 
 .links a:hover::after {
     width: 100%;
-    transition: width 300ms ease-in-out;
+    transition: width 500ms ease-in-out;
 }
 
 /*=== CARD ===*/
 
 .card {
     background-color: whitesmoke;
-    width: 800px;
-    min-height: 400px;
-    margin: 45px auto;
-    /*=== GRID DIVIDIDO AO MEIO ===*/
+    width: 700px;
+    min-height: 500px;
+    /* espaçamaneto ao centro */
+    margin: 25px auto;
+    /* grid dividido ao meio */
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /*=== SOMBRA ===*/
-    box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
-    /*=== ANIMAÇÃO ===*/
-    animation: up 200ms ease-out;
+    /* sombra */
+    box-shadow: 0px 2px 6px -4px rgba(0, 0, 0, 0.9);
+    /* animação */
+    animation: up 500ms ease-out;
 }
 
 @keyframes up {
@@ -89,12 +90,12 @@ header {
 /*=== DETAILS ===*/
 
 .details {
-    padding: 32px;
+    padding: 20px;
 }
 
 .details .item {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 16px 0;
+    padding: 8px 0;
 }
 
 .details .item:last-child {
@@ -105,14 +106,14 @@ header {
     font-size: 14px;
     line-height: 24px;
     color: #777;
-    letter-spacing: 0.7px;
-    font-weight: normal;
+    letter-spacing: 0.3px;
+    font-weight: bold;
 }
 
 .details .item div:nth-child(2) {
     color: #555;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 .details h3 {
@@ -134,14 +135,14 @@ header {
     font-size: 12px;
 }
 
-/*=== DETAILS ===*/
+/*=== FORM ===*/
 
 input {
     width: 100%;
     outline: none;
     color: #555;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: normal;
+    font-size: 15px;
 }
 
 input[type="radio"] {
@@ -150,17 +151,17 @@ input[type="radio"] {
 }
 
 input::placeholder {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: normal;
-
 }
 
-button[type="submit"]{
+button[type="submit"] {
     padding: 8px 32px;
-    background-color: green;
-    color: white;
+    background-color: var(--primary-color);
+    color: whitesmoke;
     border-radius: 4px;
-    margin-top: 32px;
+    margin-top: 15px;
     width: 100%;
     font-size: 16px;
+    font-weight: normal;
 }
