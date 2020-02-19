@@ -1,0 +1,24 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Cadastre as palestras</h2>
+    <form method="POST" class="form" action="/palestra">
+        <div class="form-group">
+            <label >Título</label>
+            <input type="text" name="titulo" class="form-control" placeholder="Título da palestra">
+        </div>
+        <div class="form-group">
+            <label>Palestrante</label>
+            <input type="text" name="palestrante" class="form-control" placeholder="Nome do palestrante">
+        </div>
+        <div class="form-group">
+            <label >Data e Horário</label>
+            <input class="form-control" type="datetime-local" name="horario"> 
+        </div>
+            <button class="btn bg-primary" type="submit">Salvar Palestra</button>
+            <br>
+    </form>
+</div>
+
+{% endblock content %}

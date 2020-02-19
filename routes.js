@@ -1,9 +1,9 @@
 const express = require('express')
 const routes = express.Router()
-const cadastro = require('./cadastro')
 const VisitanteController = require('./src/controllers/VistanteController')
 const entrar = require('./src/controllers/usuario/entrar')
 const confirmacaoPalestra = require('./src/controllers/palestra/palestraConfirmacao')
+const PalestraController = require('./src/controllers/PalestraController')
 
 routes.get('/', function (req, res) {
     return res.redirect('/entrar')
@@ -20,7 +20,6 @@ routes.get('/cadastro', function (req, res) {
 })
 routes.post('/cadastro', VisitanteController.store)
 
-// routes.post('/cadastro', cadastro.post)
 
 routes.get('/certificado', function (req, res) {
     return res.send('certificado')
@@ -28,8 +27,15 @@ routes.get('/certificado', function (req, res) {
 
 routes.get('/confirmacao/:palestra/:codigoAutenticacao', confirmacaoPalestra.get);
 
+routes.get('/palestra', function (req, res) {
+    return res.render('palestra/criarPalestra');
+});
+routes.post('/palestra', PalestraController.store);
+
 routes.get('*', function (req, res) {
     return res.render('404');
 });
+
+
 
 module.exports = routes
