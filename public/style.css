@@ -24,6 +24,10 @@ header {
     box-sizing: border-box;
 }
 
+i {
+    font-family: fontawesome !important;
+}
+
 .links {
     font-size: 22px;
 }
@@ -187,4 +191,9 @@ button[type="custom-button"]{
     width: 100%;
     font-size: 16px;
     cursor: pointer;
+}
+
+.list-group-item.active {
+    background-color: #5166ef;
+    color: #fff !important;
 }

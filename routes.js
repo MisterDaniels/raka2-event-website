@@ -27,7 +27,7 @@ routes.post('/cadastro', VisitanteController.store)
 
 
 routes.get('/certificado', function (req, res) {
-    return res.send('certificado')
+    return res.render('certificado/lista');
 })
 
 routes.get('/confirmacao/:palestra/:codigoAutenticacao', confirmacaoPalestra.get);
@@ -40,7 +40,5 @@ routes.post('/palestra', PalestraController.store);
 routes.get('*', function (req, res) {
     return res.render('404');
 });
-
-
 
 module.exports = routes
