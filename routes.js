@@ -18,6 +18,11 @@ routes.post('/entrar', entrar.post);
 routes.get('/cadastro', function (req, res) {
     return res.render('cadastro/create')
 })
+
+routes.get('/selecionaPalestra', function (req, res) {
+    return res.render('palestra/selecionaPalestra')
+})
+
 routes.post('/cadastro', VisitanteController.store)
 
 

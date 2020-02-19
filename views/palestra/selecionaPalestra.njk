@@ -1,0 +1,25 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <form class="custom-card" method="POST" action="/selecionaPalestra">
+        <section class="avatar" style="background: url(https://source.unsplash.com/collection/9548716/700x700) no-repeat center center / cover"></section>
+
+        <section class="details" style="">
+            <h3>Selecione as Palestras</h3>
+
+            <div class="item">
+                <div>Sexo</div>
+                <div>
+                    <span><input type="radio" name="Palestra1" value="Palestra1" checked="checked">Palestra 1</span>
+                    <span><input type="radio" name="Palestra2" value="Palestra2" checked="checked">Palestra 2</span>
+                    <span><input type="radio" name="Palestra3" value="Palestra3" checked="checked">Palestra 3</span>
+                    <span><input type="radio" name="Palestra4" value="Palestra4" checked="checked">Palestra 4</span>
+                    <span><input type="radio" name="Palestra5" value="Palestra6" checked="checked">Palestra 5</span>
+                </div>
+            </div>
+
+            <button type="submit">Inscrever-se</button>
+        </section>
+
+    {% endblock content %}

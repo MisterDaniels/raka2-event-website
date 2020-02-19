@@ -4,7 +4,7 @@
   "description": "Sistema de cadastro de visitantes e emissão de certifcados de palestras",
   "main": "server.js",
   "scripts": {
-    "config" : "npx sequelize db:create && npx sequelize db:migrate",
+    "config": "npx sequelize db:create && npx sequelize db:migrate",
     "dev": "npx sequelize db:migrate && nodemon",
     "start": "npx sequelize db:create && npx sequelize db:migrate && nodemon",
     "randomstring": "randomstring",

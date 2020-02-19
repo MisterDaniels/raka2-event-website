@@ -174,18 +174,16 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-button[type="submit"]:hover{
+button[type="custom-button"]:hover, button[type="submit"]:hover{
     background-color: #6160ff;
 }
 
 button[type="custom-button"]{
     padding: 8px 32px;
-    background-color: white;
-    color: black;
-    border: solid 1px;
+    background-color: var(--primary-color);
+    color: whitesmoke;
     border-radius: 4px;
-    border-color: black;
-    margin-top: 20px;
+    margin-top: 7px;
     width: 100%;
     font-size: 16px;
     cursor: pointer;
