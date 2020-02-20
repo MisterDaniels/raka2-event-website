@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 :root {
     --primary-color: #6176ff;
-    --primary-color: #6176ff;
     --not-available-color: #e0e0e0;
 }
 
@@ -196,12 +195,64 @@ button[type="custom-button"]{
 .list-group-item.active {
     background-color: #5166ef;
     color: #fff !important;
-<<<<<<< HEAD
 }
 
-/* input[type='checkbox']:checked > .rounded.text-white.px-2 {
-    background-color: aqua;
-} */
-=======
+/*=== CARDS ===*/
+
+.cards {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
 }
->>>>>>> 653ccfe3784c9ad2ea68d2f33f696434c38daf87
+
+.card {
+    background: whitesmoke;
+    border: 1px solid #333;
+    padding: 5px;
+    cursor: pointer;
+    display: grid;
+}
+
+.card__content {
+    padding: 1px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.card__info {
+    padding: 24px;
+    align-items: center;
+}
+
+.card__palestrante {
+    background-color: var(--primary-color);
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 0px 5px;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.card__horario {
+    background-color: #7159c1;
+    filter: brightness(90%);
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#wrapper {
+    text-align: center;
+    padding: 12px;
+}
+
+#wrapper h1 {
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: bold;
+    color: black
+}

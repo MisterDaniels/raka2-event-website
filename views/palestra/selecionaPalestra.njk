@@ -2,40 +2,33 @@
 
 {% block content %}
 
-    <form class="custom-card" method="POST" action="/selecionaPalestra">
+    <form class="" method="POST" action="/selecionaPalestra">
 
-        <section class="details" style="">
-            <h3>Selecione as Palestras</h3>
+        <div id="wrapper">
+            <h1>Selecione as Palestras...</h1>
+        </div>
 
-            <div class="item" style="grid-auto-columns: 60px;">
-                {% for palestra in palestras %}
-                    <div class="bg-info rounded text-white px-2">
-                        <label class="form-check-label"><input style="align-content:flex-start" type="checkbox" name="Palestra1" value="Palestra1">
-                        Título: {{palestra.titulo}} - Palestrante: {{palestra.palestrante}} Data: {{palestra.horario}}
-                        </label>
+        <section class="cards">
+            {% for palestra in palestras %}
+
+                <div class="card" id="{{ palestra.id }}">
+                    <div class="card__content">
+                        <p>Nome da Palestra:</p>
+                        <p>{{ palestra.titulo }}</p>
                     </div>
-                    <br>
+                    <div class="card__info">
+                        <p class="card__palestrante">{{ palestra.palestrante }}</p>
+                        <p class="card__horario">{{ palestra.horario }}</p>
+                        </div>
+                        <label class="form-check-label"><input style="align-content:flex-start" type="checkbox" name="Palestra1" value="Palestra1">
+                    </div>
                 {% endfor %}
-        <section class="avatar" style="background: url(https://source.unsplash.com/collection/9548716/700x700) no-repeat center center / cover"></section>
 
-        <section class="details" style="">
-            <h3>Selecione as Palestras</h3>
+                <button type="submit">Escolher Palestras</button>
+            </section>
 
-            <div class="item">
-                <div>Sexo</div>
-                <div>
-                    <span><input type="radio" name="Palestra1" value="Palestra1" checked="checked">Palestra 1</span>
-                    <span><input type="radio" name="Palestra2" value="Palestra2" checked="checked">Palestra 2</span>
-                    <span><input type="radio" name="Palestra3" value="Palestra3" checked="checked">Palestra 3</span>
-                    <span><input type="radio" name="Palestra4" value="Palestra4" checked="checked">Palestra 4</span>
-                    <span><input type="radio" name="Palestra5" value="Palestra6" checked="checked">Palestra 5</span>
-                </div>
-            </div>
+            <script>
+                $("input[type='checkbox']:checked")
+            </script>
 
-            <button type="submit">Inscrever-se</button>
-        </section>
-=        <script>
-            $("input[type='checkbox']:checked")
-        </script>
-
-    {% endblock content %}
+        {% endblock content %}
