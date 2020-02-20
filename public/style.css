@@ -113,8 +113,8 @@ i {
 }
 
 .details h3, .details .item div:nth-child(1) {
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 13px;
+    line-height: 23px;
     color: #777;
     letter-spacing: 0.3px;
     font-weight: bold;
