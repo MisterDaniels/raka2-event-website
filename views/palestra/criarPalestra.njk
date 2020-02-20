@@ -14,11 +14,17 @@
         </div>
         <div class="form-group">
             <label >Data e Horário</label>
-            <input class="form-control" type="datetime-local" name="horario"> 
+            <input id="horario" class="form-control" type="text" name="horario" > 
         </div>
             <button class="btn bg-primary" type="submit">Salvar Palestra</button>
             <br>
     </form>
 </div>
+<script>
+
+$('#horario').datetimepicker({
+  timeFormat: "hh:mm tt"
+});
+</script>
 
 {% endblock content %}

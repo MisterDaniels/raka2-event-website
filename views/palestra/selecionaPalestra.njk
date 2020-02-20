@@ -1,0 +1,26 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <form class="custom-card" method="POST" action="/selecionaPalestra">
+        <section class="details" style="">
+            <h3>Selecione as Palestras</h3>
+
+            <div class="item" style="grid-auto-columns: 60px;">
+                {% for palestra in palestras %}
+                    <div class="bg-info rounded text-white px-2">
+                        <label class="form-check-label"><input style="align-content:flex-start" type="checkbox" name="Palestra1" value="Palestra1">
+                        Título: {{palestra.titulo}} - Palestrante: {{palestra.palestrante}} Data: {{palestra.horario}}
+                        </label>
+                    </div>
+                    <br>
+                {% endfor %}
+            </div>
+
+            <button type="submit">Inscrever-se</button>
+        </section>
+        <script>
+            $("input[type='checkbox']:checked")
+        </script>
+
+    {% endblock content %}

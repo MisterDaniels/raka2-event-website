@@ -24,6 +24,10 @@ header {
     box-sizing: border-box;
 }
 
+i {
+    font-family: fontawesome !important;
+}
+
 .links {
     font-size: 22px;
 }
@@ -174,19 +178,26 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-button[type="submit"]:hover{
+button[type="custom-button"]:hover, button[type="submit"]:hover{
     background-color: #6160ff;
 }
 
 button[type="custom-button"]{
     padding: 8px 32px;
-    background-color: white;
-    color: black;
-    border: solid 1px;
+    background-color: var(--primary-color);
+    color: whitesmoke;
     border-radius: 4px;
-    border-color: black;
-    margin-top: 20px;
+    margin-top: 7px;
     width: 100%;
     font-size: 16px;
     cursor: pointer;
 }
+
+.list-group-item.active {
+    background-color: #5166ef;
+    color: #fff !important;
+}
+
+/* input[type='checkbox']:checked > .rounded.text-white.px-2 {
+    background-color: aqua;
+} */
