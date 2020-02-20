@@ -3,6 +3,7 @@
 {% block content %}
 
     <form class="custom-card" method="POST" action="/selecionaPalestra">
+
         <section class="details" style="">
             <h3>Selecione as Palestras</h3>
 
@@ -15,10 +16,12 @@
                     </div>
                     <br>
                 {% endfor %}
+
             </div>
 
             <button type="submit">Inscrever-se</button>
         </section>
+
         <script>
             $("input[type='checkbox']:checked")
         </script>
