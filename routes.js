@@ -19,7 +19,13 @@ routes.get('/cadastro', function (req, res) {
     return res.render('cadastro/create')
 })
 
+<<<<<<< HEAD
 routes.get('/selecionaPalestra', PalestraController.index)
+=======
+routes.get('/selecionaPalestra', function (req, res) {
+    return res.render('palestra/selecionaPalestra')
+})
+>>>>>>> 653ccfe3784c9ad2ea68d2f33f696434c38daf87
 
 routes.post('/cadastro', VisitanteController.store)
 

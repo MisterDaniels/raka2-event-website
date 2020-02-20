@@ -1,0 +1,46 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <script>
+        $('.links a:nth-child(1)').removeClass("active");
+        $('.links a:nth-child(2)').removeClass("active");
+        $('.links a:nth-child(3)').attr("active");
+    </script>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" href="https://cev.fgv.br/sites/cev.fgv.br/files/teste33.pdf" data-toggle="list" role="tab">Palestra 1 <i class="fas fa-download float-right"></i></a>
+                    <a class="list-group-item list-group-item-action" href="https://cev.fgv.br/sites/cev.fgv.br/files/teste33.pdf" data-toggle="list" role="tab">Palestra 2 <i class="fas fa-download float-right"></i></a>
+                    <a class="list-group-item list-group-item-action" href="https://cev.fgv.br/sites/cev.fgv.br/files/teste33.pdf" data-toggle="list" role="tab">Palestra 3 <i class="fas fa-download float-right"></i></a>
+                    <a class="list-group-item list-group-item-action" href="https://cev.fgv.br/sites/cev.fgv.br/files/teste33.pdf" data-toggle="list" role="tab">Palestra 4 <i class="fas fa-download float-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#cpf').mask('000.000.000-00', {reverse: true});
+
+        // Checar se vem da palestra
+        let palestra = "{{palestra}}"
+        if (palestra) {
+            $('#notifications').toast('show');
+        }
+
+        // Prevenir o botão de registrar de carregar form data
+        $('button[type="custom-button"]').click(function (event) {
+            event.preventDefault();
+
+            if (palestra) {
+                window.location.href = `/cadastro?palestra=${palestra}`;
+            } else {
+                window.location.href = '/cadastro';
+            }
+        });
+    </script>
+    </form>
+
+{% endblock content %}

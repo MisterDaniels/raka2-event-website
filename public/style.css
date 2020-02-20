@@ -19,7 +19,7 @@ body {
 header {
     background-color: whitesmoke;
     width: 100%;
-    padding: 22px;
+    padding: 15px;
     text-align: center;
     box-sizing: border-box;
 }
@@ -75,10 +75,10 @@ i {
 
 .custom-card {
     background-color: whitesmoke;
-    width: 700px;
-    min-height: 500px;
+    width: 800px;
+    min-height: 400px;
     /* espaçamaneto ao centro */
-    margin: 25px auto;
+    margin: 15px auto;
     /* grid dividido ao meio */
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -106,7 +106,7 @@ i {
 
 .details .item {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 8px 0;
+    padding: 5px 0;
 }
 
 .details .item:last-child {
@@ -196,8 +196,12 @@ button[type="custom-button"]{
 .list-group-item.active {
     background-color: #5166ef;
     color: #fff !important;
+<<<<<<< HEAD
 }
 
 /* input[type='checkbox']:checked > .rounded.text-white.px-2 {
     background-color: aqua;
 } */
+=======
+}
+>>>>>>> 653ccfe3784c9ad2ea68d2f33f696434c38daf87
