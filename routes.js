@@ -21,13 +21,11 @@ routes.get('/cadastro', function (req, res) {
     return res.render('cadastro/create')
 })
 
-routes.get('/selecionaPalestra', PalestraController.index)
-routes.get('/selecionaPalestra', function (req, res) {
-    return res.render('palestra/selecionaPalestra')
-})
-
 routes.post('/cadastro', VisitanteController.store)
 
+routes.get('/selecionaPalestra', PalestraController.index)
+
+routes.get('/palestras', PalestraController.list)
 
 routes.get('/certificado', function (req, res) {
     return res.render('certificado/lista');

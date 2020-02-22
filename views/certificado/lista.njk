@@ -5,8 +5,16 @@
     <script>
         $('.links a:nth-child(1)').removeClass("active");
         $('.links a:nth-child(2)').removeClass("active");
-        $('.links a:nth-child(3)').attr("active");
+        $('.links a:nth-child(3)').removeClass("active");
+        $('.links a:nth-child(4)').addClass("active");
     </script>
+
+    <div class="container mt-2 alert alert-success alert-dismissible fade show" role="alert" style="display:none;">
+        <strong>Seu certificado está cadastrado!</strong> Pronto para ser baixado agora mesmo!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 
     <div class="container">
         <div class="row mt-5">
@@ -21,26 +29,16 @@
         </div>
     </div>
 
-    <script>
-        $('#cpf').mask('000.000.000-00', {reverse: true});
+        <script>
+            $('#cpf').mask('000.000.000-00', {reverse: true});
 
-        // Checar se vem da palestra
-        let palestra = "{{palestra}}"
-        if (palestra) {
-            $('#notifications').toast('show');
-        }
+            // Checar se vem da palestra
+            let searchParams = new URLSearchParams(window.location.search);
 
-        // Prevenir o botão de registrar de carregar form data
-        $('button[type="custom-button"]').click(function (event) {
-            event.preventDefault();
-
-            if (palestra) {
-                window.location.href = `/cadastro?palestra=${palestra}`;
-            } else {
-                window.location.href = '/cadastro';
+            if (searchParams.has('palestra')) {
+                $('.alert').show();
             }
-        });
-    </script>
+        </script>
     </form>
 
 {% endblock content %}

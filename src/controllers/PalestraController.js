@@ -14,5 +14,10 @@ module.exports = {
         const palestras = await Palestra.findAll()
         return res.render('palestra/selecionaPalestra', {palestras})
         
+    },
+    async list(req, res) {
+        const palestras = await Palestra.findAll()
+
+        return res.render('palestra/mostraPalestra', {palestras})
     }
 }
