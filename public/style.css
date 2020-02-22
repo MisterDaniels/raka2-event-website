@@ -70,14 +70,15 @@ i {
     transition: width 500ms ease-in-out;
 }
 
+
 /*=== CARD ===*/
 
 .custom-card {
     background-color: whitesmoke;
-    width: 800px;
-    min-height: 400px;
+    width: 80%;
+    min-height: 0.3em;
     /* espaçamaneto ao centro */
-    margin: 15px auto;
+    margin: 20px auto;
     /* grid dividido ao meio */
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -113,7 +114,7 @@ i {
 }
 
 .details h3, .details .item div:nth-child(1) {
-    font-size: 13px;
+    font-size: 20x;
     line-height: 23px;
     color: #777;
     letter-spacing: 0.3px;
@@ -138,7 +139,7 @@ i {
     border-radius: 16px;
     color: white;
     margin-right: 4px;
-    margin-top: 8px;
+    margin-top: 1px;
     display: inline-block;
     font-weight: bold;
     text-transform: uppercase;
@@ -161,7 +162,7 @@ input[type="radio"] {
 }
 
 input::placeholder {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: normal;
 }
 
@@ -261,5 +262,3 @@ button[type="custom-button"]{
     font-weight: bold;
     margin: 0px
 }
-
-
