@@ -1,9 +1,9 @@
 const express = require('express')
 const routes = express.Router()
 const VisitanteController = require('./src/controllers/VistanteController')
-const entrar = require('./src/controllers/usuario/entrar')
 const confirmacaoPalestra = require('./src/controllers/palestra/palestraConfirmacao')
 const PalestraController = require('./src/controllers/PalestraController')
+const VisitantePalestraController = require('./src/controllers/VisitantePalestrasController')
 
 routes.get('/', function (req, res) {
     return res.redirect('/entrar')
@@ -13,7 +13,7 @@ routes.get('/entrar', function (req, res) {
     return res.render('entrar/entrar')
 });
 
-routes.post('/entrar', entrar.post);
+routes.post('/entrar', VisitantePalestraController.store);
 
 routes.get('/cadastro', function (req, res) {
     return res.render('cadastro/create')

@@ -34,9 +34,16 @@
                 </div>
             </div>
 
-            <button type="submit">Entrar</button>
+            <button class="btn btn-primary" type="submit">Entrar</button>
 
-            <button type="custom-button">Cadastrar</button>
+            <a class="btn btn-primary" style="width:100%;" href="cadastro">Cadastrar</a>
+
+            {% if message %}
+            
+            <div class="alert alert-danger text-center" style="margin-top: 10px;" role="alert">
+                CPF não cadastrado.
+            </div>
+            {% endif %}
 
         </section>     
     <script>

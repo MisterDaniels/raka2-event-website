@@ -16,6 +16,10 @@ class Visitante extends Model {
             sequelize
         })
     }
+    static associate(models) {
+        this.belongsToMany(models.Palestra, { foreignKey: 'id_palestra', through: 'VisitantePalestras', as: 'palestras' })
+    }
+   
 }
 
 module.exports = Visitante
