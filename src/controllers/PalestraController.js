@@ -1,4 +1,5 @@
 const Palestra = require('../models/Palestra')
+const moment = require('moment')
 
 module.exports = {
     async store(req, res) {
@@ -9,6 +10,7 @@ module.exports = {
         return res.json(palestra)
     },
     async index(req, res) {
+       
         const palestras = await Palestra.findAll()
         return res.render('palestra/selecionaPalestra', {palestras})
         
