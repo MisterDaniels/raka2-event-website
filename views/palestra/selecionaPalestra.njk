@@ -11,23 +11,20 @@
         <section class="cards">
             {% for palestra in palestras %}
 
-                <div class="card" id="{{ palestra.id }}">
-                    <div class="card__content">
-                        <p>{{ palestra.titulo }}</p>
-                    </div>
-                    <div class="card__info">
-                        <p class="card__palestrante">Palestrante</p>
-                        <p class="card__palestrante">{{ palestra.palestrante }}</p>
-                        <p class="card__horario">Horário</p>
-                        <p class="card__horario">{{ palestra.horario }}</p>
-                        </div>
-                        <label class="form-check-label"><input style="align-content:flex-start" type="checkbox" name="{{ palestra.id }}" value="{{ palestra.id }}">
+                <div class="card">
+                    <div class="card__image" style="background: url(https://source.unsplash.com/collection/9548716/700x700) no-repeat center center / cover"></div>
+                    <div class="card__title">{{ palestra.palestrante }}</div>
+                    <p class="card__text">{{ palestra.titulo }}</p>
+                    <p class="card__text_2">{{ palestra.horario }}</p>
+                    <label class="form-check-label"><input style="align-content:flex-start" type="checkbox" name="{{ palestra.id }}" value="{{ palestra.id }}">
                     </div>
                 {% endfor %}
 
             </section>
-            <button type="submit">Escolher Palestras</button>
+            <button type="submit_2">Escolher Palestras</button>
+
             <script>
+                const image
                 $("input[type='checkbox']:checked")
             </script>
 

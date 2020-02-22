@@ -1,6 +1,8 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
+
 const routes = require('./routes')
+require('./src/database')
 
 const server = express()
 
@@ -16,8 +18,6 @@ nunjucks.configure('views', {
     noCache: true
 })
 
-require('./src/database')
-
-server.listen(5001, function () {
+server.listen(5000, function () {
     console.log('server is running')
 })
