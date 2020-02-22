@@ -9,7 +9,8 @@ exports.get = function (req, res) {
 
     if (validacaoCodigo === true) {
         return res.render('entrar/entrar', {
-            palestra: palestra
+            palestra: palestra,
+            token: codigoAutenticacao
         });
     } else {
         return res.render('404');

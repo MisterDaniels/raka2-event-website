@@ -17,6 +17,6 @@ module.exports = {
         }
         const visitante = await Visitante.create({id, nome, cidade, estado, sexo, data_nascimento})
 
-        return res.json(visitante)
+        return res.redirect(`/selecionaPalestra?id=${id}`);
     }
 }

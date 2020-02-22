@@ -1,0 +1,25 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <script>
+        $('.links a:nth-child(1)').removeClass("active");
+        $('.links a:nth-child(2)').removeClass("active");
+        $('.links a:nth-child(4)').removeClass("active");
+        $('.links a:nth-child(3)').addClass("active");
+    </script>    
+
+    <section class="cards mt-5">
+        {% for palestra in palestras %}
+
+            <div class="card">
+                <div class="card__image card__image--{{ palestra.id }}"></div>
+                <div class="card__title">{{ palestra.palestrante }}</div>
+                <p class="card__text">{{ palestra.titulo }}</p>
+                <p class="card__text_2">{{ palestra.horario }}</p>
+            </div>
+
+        {% endfor %}
+    </section>
+
+{% endblock content %}

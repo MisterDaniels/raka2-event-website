@@ -5,10 +5,18 @@
     <script>
         $('.links a:nth-child(2)').removeClass("active");
         $('.links a:nth-child(3)').removeClass("active");
-        $('.links a:nth-child(1)').attr("active");
+        $('.links a:nth-child(4)').removeClass("active");
+        $('.links a:nth-child(1)').addClass("active");
     </script>
 
-    <form class="custom-card" method="POST" action="/entrar">
+    <div class="container mt-2 alert alert-danger alert-dismissible fade show" role="alert" style="display:none;">
+        <strong>Ops, houve um problema!</strong> Parece que você não está cadastrado, <a href="/cadastro">cadastre-se agora mesmo</a>!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <form class="custom-card" method="POST" action="/entrar?palestra={{palestra}}&token={{token}}">
         <section class="avatar" style="background: url(https://source.unsplash.com/collection/9548716/700x700) no-repeat center center / cover">
             <!-- Then put toasts within -->
             <div id="notifications" style="position: relative; top: 0; margin: 1.5em" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
@@ -30,13 +38,13 @@
             <div class="item">
                 <div>CPF</div>
                 <div>
-                    <input class="form-control" id="cpf" type="text" name="cpf" placeholder="Insira o CPF..." pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}">
+                    <input class="form-control" id="cpf" type="text" name="cpf" placeholder="Insira o CPF..." pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" required>
                 </div>
             </div>
 
             <button class="btn btn-primary" type="submit">Entrar</button>
 
-            <a class="btn btn-primary" style="width:100%;" href="cadastro">Cadastrar</a>
+            <a class="btn btn-primary" style="width:100%;" href="/cadastro">Cadastrar</a>
 
             {% if message %}
             
@@ -50,9 +58,19 @@
         $('#cpf').mask('000.000.000-00', {reverse: true});
 
         // Checar se vem da palestra
-        let palestra = "{{palestra}}"
+        let palestra = "{{palestra}}";
+        let token = "{{token}}";
+
         if (palestra) {
             $('#notifications').toast('show');
+        }
+
+        let error = "{{error}}";
+
+        if(error) {
+            if (error === '1') {
+                $('.alert').show();
+            }
         }
 
         // Prevenir o botão de registrar de carregar form data
@@ -60,7 +78,7 @@
             event.preventDefault();
 
             if (palestra) {
-                window.location.href = `/cadastro?palestra=${palestra}`;
+                window.location.href = `/cadastro?palestra=${palestra}&token=${token}`;
             } else {
                 window.location.href = '/cadastro';
             }
