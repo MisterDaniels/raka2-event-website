@@ -5,7 +5,7 @@ const entrar = require('./src/controllers/usuario/entrar')
 const PalestraController = require('./src/controllers/PalestraController')
 const VisitanteController = require('./src/controllers/VistanteController')
 const confirmacaoPalestra = require('./src/controllers/palestra/palestraConfirmacao')
-
+const CertificadoController = require('./src/controllers/certificado/CertificadoController');
 
 routes.get('/', function (req, res) {
     return res.redirect('/entrar')
@@ -27,11 +27,11 @@ routes.get('/selecionaPalestra', PalestraController.index)
 
 routes.get('/palestras', PalestraController.list)
 
-routes.get('/certificado', function (req, res) {
-    return res.render('certificado/lista');
-})
+routes.get('/certificado', CertificadoController.get)
 
 routes.get('/confirmacao/:palestra/:codigoAutenticacao', confirmacaoPalestra.get);
+
+routes.post('/confirmacao/:palestra/:cpf', confirmacaoPalestra.post);
 
 routes.get('/palestra', function (req, res) {
     return res.render('palestra/criarPalestra');

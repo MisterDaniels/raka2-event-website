@@ -20,8 +20,8 @@ exports.post = async function (req, res) {
     }
 
     if (req.query.palestra !== '') {
-        res.redirect(`/certificado?palestra=${req.query.palestra}`);
+        res.redirect(`/certificado?usuario=${req.body['cpf']}&palestra=${req.query.palestra}`);
     } else {    
-        res.redirect('/certificado');
+        res.redirect(`/certificado?usuario=${req.body['cpf']}`);
     }
 }
