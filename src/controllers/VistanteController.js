@@ -56,6 +56,7 @@ module.exports = {
 
     async index(req, res) {
         const { cpf } = req.body
+        const { palestra } = req.query;
 
         let containsId = await Visitante.findOne({
             where: {
@@ -67,6 +68,13 @@ module.exports = {
             return res.render('entrar/entrar', {erro: 'Este CPF ainda não foi cadastrado'})
         }
 
-        return res.redirect('/certificado');
+        // TODO confirmar presença se for QrCode
+
+
+        if (palestra) {
+            return res.redirect('/certificado?certificado-novo=true');
+        } else {
+            return res.redirect('/certificado');
+        }
     }
 }
