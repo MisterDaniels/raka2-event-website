@@ -5,9 +5,13 @@ module.exports = {
     return queryInterface.createTable('Visitantes',
       {
         id: {
-          type: Sequelize.STRING,
+          type: Sequelize.INTEGER,
           primaryKey: true,
-          autoIncrement: false,
+          autoIncrement: true,
+          allowNull: false,
+        },
+        cpf: {
+          type: Sequelize.STRING,
           allowNull: false,
         },
         nome: {

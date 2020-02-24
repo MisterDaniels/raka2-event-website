@@ -8,6 +8,7 @@ const connection = new Sequelize(dbConfig)
 
 Visitante.init(connection)
 Palestra.init(connection)
-VisitantePalestra.init(connection)
+Visitante.associate(connection.models)
+Palestra.associate(connection.models)
 
 module.exports = connection

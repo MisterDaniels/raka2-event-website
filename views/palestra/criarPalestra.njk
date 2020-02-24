@@ -36,6 +36,11 @@ $('#horario').datetimepicker({
             </div>
 
             <button type="submit">Salvar Palestra</button>
+            {% if message %}
+                <div class="alert alert-success text-center" style="margin-top:10px;" role="alert">
+                    <strong>Palestra cadastrada com sucesso!</strong>
+                </div>
+            {% endif %}
         </section>
 
     {% endblock content %}
