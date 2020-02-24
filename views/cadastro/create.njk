@@ -18,44 +18,44 @@
 
         <section class="details" style="">
             <h3>Novo Cadastro</h3>
-
+            
             <div class="item">
-                <div>CPF</div>
+                <div>CPF <small>*</small></div>
                 <div>
-                    <input class="form-control" id="cpf" type="text" name="cpf" placeholder="Insira o CPF..." pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}">
+                    <input class="form-control" id="cpf" type="text" name="cpf" placeholder="Insira o CPF..." pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" required>
                 </div>
             </div>
 
             <div class="item">
-                <div>Nome</div>
+                <div>Nome <small>*</small></div>
                 <div>
-                    <input class="form-control" type="text" name="nome" placeholder="Insira o nome...">
+                    <input class="form-control" type="text" name="nome" placeholder="Insira o nome..." required>
                 </div>
             </div>
 
             <div class="item">
-                <div>Cidade</div>
+                <div>Cidade <small>*</small></div>
                 <div>
-                    <input class="form-control" type="text" name="cidade" placeholder="Insira a cidade...">
+                    <input class="form-control" type="text" name="cidade" placeholder="Insira a cidade..." required>
                 </div>
             </div>
 
             <div class="item">
-                <div>Estado</div>
+                <div>Estado <small>*</small></div>
                 <div>
-                    <input class="form-control" type="text" name="estado" placeholder="Insira o estado...">
+                    <input class="form-control" type="text" name="estado" placeholder="Insira o estado..." required>
                 </div>
             </div>
 
             <div class="item">
-                <div>Data de Nascimento</div>
+                <div>Data de Nascimento <small>*</small></div>
                 <div>
-                    <input class="form-control" type="date" name="data_nascimento">
+                    <input class="form-control" type="date" name="data_nascimento" required>
                 </div>
             </div>
 
             <div class="item">
-                <div>Sexo</div>
+                <div>Sexo <small>*</small></div>
                 <div>
                     <span><input type="radio" name="sexo" value="M" checked="checked">Masculino</span>
                     <span><input type="radio" name="sexo" value="F">Feminino</span>

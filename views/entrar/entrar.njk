@@ -19,27 +19,18 @@
         </div>
     {% endif %}
 
-    <div class="container mt-2 alert alert-danger alert-dismissible fade show" role="alert" style="display:none;">
-        <strong>Ops, houve um problema!</strong> Parece que você não está cadastrado, <a href="/cadastro">cadastre-se agora mesmo</a>!
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-
-    <form class="custom-card" method="POST" action="/entrar?palestra={{palestra}}&token={{token}}">
-        <section class="avatar" style="background: url(https://source.unsplash.com/collection/9548716/700x700) no-repeat center center / cover">
+    <form class="custom-card" method="POST" action="/entrar?palestra={{palestra}}">        <section class="avatar" style="background: url(https://source.unsplash.com/collection/9548716/700x700) no-repeat center center / cover">
             <!-- Then put toasts within -->
-            <div id="notifications" style="position: relative; top: 0; margin: 1.5em" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+            {%if palestra %}
+            <div id="notifications" style="position: relative; top: 0; margin: 1.5em; opacity: 100%;" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
                 <div class="toast-header">
                     <strong class="mr-auto">Olá, parece que você veio!</strong>
-                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <div class="toast-body">
-                    Agora é só colocar seu CPF e o seu certificado estará disponível!
+                    Agora é só entrar com o seu CPF e o seu certificado estará disponível!
                 </div>
             </div>
+            {% endif %}
         </section>
         <section class="details" style="">
             <h3>ENTRE NA SUA CONTA</h3>
@@ -53,34 +44,21 @@
 
                 <button type="submit">Entrar</button>
 
-            <button type="custom-button" href="/cadastro">Cadastrar</button>
+            <button type="custom-button">Cadastrar</button>
 
         </section>     
     <script>
         $('#cpf').mask('000.000.000-00', {reverse: true});
 
-        // Checar se vem da palestra
-        let palestra = "{{palestra}}";
-        let token = "{{token}}";
-
-        if (palestra) {
-            $('#notifications').toast('show');
-        }
-
-        let error = "{{error}}";
-
-        if(error) {
-            if (error === '1') {
-                $('.alert').show();
-            }
-        }
+        const palestra = "{{palestra}}";
+        const token = "{{token}}";
 
         // Prevenir o botão de registrar de carregar form data
-        $('button[type="custom-button"]').click(function (event) {
+        $('button[type="custom-button"], .links a:nth-child(2)').click(function (event) {
             event.preventDefault();
 
             if (palestra) {
-                window.location.href = `/cadastro?palestra=${palestra}&token=${token}`;
+                window.location.href = `/cadastro?palestra=${palestra}`;
             } else {
                 window.location.href = '/cadastro';
             }

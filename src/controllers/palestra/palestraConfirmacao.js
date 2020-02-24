@@ -1,9 +1,6 @@
 const ValidaQrCode = require("../../services/validacoes/validaCodigoQrCode"); 
 const Visitante = require('../../models/Visitante');
-
-const ERRORS = {
-    usuarioNaoExiste: 1
-};
+const VisitantePalestra = require('../../models/VisitantePalestra');
 
 module.exports = {
     async get(req, res) {
@@ -26,20 +23,47 @@ module.exports = {
         const palestra = req.params.palestra;
         const cpf = req.params.cpf;
 
-        let containsId = await Visitante.findOne({
-            where: {
-                id: cpf
-            }
-        });
+        let visitante;
+        let visitantePalestra;
 
-        if (!containsId) {
+        try {
+            visitante = await Visitante.findOne({
+                where: {
+                    cpf: cpf
+                }
+            });
+        } catch(error) {
             return res.json({
-                error: ERRORS['usuarioNaoExiste']
+                error: 'Ops, parece que houve um erro interno!'
+            });
+        }
+
+        if (!visitante) {
+            return res.json({
+                error: 'Parece que você não está cadastrado!'
             });
         }
 
         // TODO Validar se está na palestra
+        try {
+            visitantePalestra = await VisitantePalestra.findOne({
+                where: {
+                    id_palestra: palestra
+                }
+            });
+            console.log(visitantePalestra);
+        } catch(error) {
+            console.log(error);
+            return res.json({
+                error: 'Ops, parece que houve um erro interno!'
+            });
+        }
 
+        if (!visitantePalestra) {
+            return res.json({
+                error: 'Parece que você não se cadastrou pra essa palestra!'
+            });
+        }
 
         // TODO Confirmar presença na palestra
         return res.json({

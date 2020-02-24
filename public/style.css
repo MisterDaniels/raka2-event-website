@@ -27,6 +27,10 @@ i {
     font-family: fontawesome !important;
 }
 
+small {
+    color: red;
+}
+
 .links {
     font-size: 22px;
 }
