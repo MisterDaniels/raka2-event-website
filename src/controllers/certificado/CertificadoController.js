@@ -1,5 +1,7 @@
 const VisitantePalestra = require('../../models/VisitantePalestra');
 
+const Op = Sequelize.Op;
+
 module.exports = {
     async get(req, res) {
         const userId = req.query.usuario;
@@ -11,6 +13,6 @@ module.exports = {
             }
         });
 
-        return res.render('certificado/lista', { allPalestras });
+        return res.render('certificado/lista');
     }
 };

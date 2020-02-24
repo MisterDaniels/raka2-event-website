@@ -67,6 +67,6 @@ module.exports = {
             return res.render('entrar/entrar', {erro: 'Este CPF ainda não foi cadastrado'})
         }
 
-        return res.render('certificado/lista')
+        return res.redirect('/certificado');
     }
 }
