@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <form class="" method="POST" action="/selecionaPalestra">
+    <form class="" method="POST" action="/certificado/lista/{{id}}">
 
         <div id="wrapper">
             <h1>Selecione as Palestras...</h1>
@@ -12,11 +12,13 @@
             {% for palestra in palestras %}
 
                 <div class="card selectable">
+                <label class="form-check-label">
                     <div class="card__image card__image--{{ palestra.id }}"></div>
                     <div class="card__title">{{ palestra.palestrante }}</div>
                     <p class="card__text">{{ palestra.titulo }}</p>
                     <p class="card__text_2">{{ palestra.horario }}</p>
-                    <label class="form-check-label"><input style="align-content:flex-start" type="checkbox" name="{{ palestra.id }}" value="{{ palestra.id }}"></label>
+                    <input style="align-content:flex-start" type="checkbox" name="{{ palestra.id }}" value="{{ palestra.id }}">
+                </label>
                 </div>
             {% endfor %}
 

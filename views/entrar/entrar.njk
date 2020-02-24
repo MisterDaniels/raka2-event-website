@@ -8,6 +8,16 @@
         $('.links a:nth-child(4)').removeClass("active");
         $('.links a:nth-child(1)').addClass("active");
     </script>
+    {% if erro %}
+        <div class="alert alert-danger text-center" style="margin-top:10px;" role="alert">
+            <strong>{{erro}}</strong>
+        </div>
+    {% endif %}
+    {%if message %}
+        <div class="alert alert-success text-center" style="margin-top:10px;" role="alert">
+            <strong>{{message}}</strong>
+        </div>
+    {% endif %}
 
     <div class="container mt-2 alert alert-danger alert-dismissible fade show" role="alert" style="display:none;">
         <strong>Ops, houve um problema!</strong> Parece que você não está cadastrado, <a href="/cadastro">cadastre-se agora mesmo</a>!
@@ -31,7 +41,6 @@
                 </div>
             </div>
         </section>
-
         <section class="details" style="">
             <h3>ENTRE NA SUA CONTA</h3>
 
@@ -42,7 +51,7 @@
                 </div>
             </div>
 
-            <button type="submit">Entrar</button>
+                <button type="submit">Entrar</button>
 
             <button type="custom-button" href="/cadastro">Cadastrar</button>
 
