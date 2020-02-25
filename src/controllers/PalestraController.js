@@ -16,18 +16,16 @@ module.exports = {
 
         return res.render('palestra/criarPalestra', { message })
     },
-    async index(req, res) {
-       
-        const palestras = await Palestra.findAll()
-
-        const {id} = req.params
-
-        return res.render('palestra/selecionaPalestra', {palestras, id})
-        
-    },
     async list(req, res) {
-        const palestras = await Palestra.findAll()
-
-        return res.render('palestra/mostraPalestra', {palestras})
+        const palestras = await Palestra.findAll({
+            attributes: [
+                'id',
+                'titulo',
+                [sequelize.fn('to_char', sequelize.col('horario'), 'DD/MM/YYYY HH24:MI'), 'horario'],
+                'palestrante'
+            ]
+        })
+        
+        return res.render('palestra/mostraPalestra', { palestras })
     }
 }
