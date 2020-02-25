@@ -16,7 +16,7 @@ module.exports = {
 
         if(containsId != undefined){
             if(containsId.dataValues.cpf == cpf){
-                return res.render('cadastro/create', {erro: 'Este CPF já foi cadastrado'})
+                return res.render('cadastro/create', {erro: 'Este CPF já foi cadastrado!'})
             }
         }
         const visitante = await Visitante.create({cpf, nome, cidade, estado, sexo, data_nascimento})
@@ -65,7 +65,7 @@ module.exports = {
         })
 
         if(containsId == undefined){
-            return res.render('entrar/entrar', {erro: 'Este CPF ainda não foi cadastrado'})
+            return res.render('entrar/entrar', {erro: 'Este CPF ainda não foi cadastrado!'})
         }
 
         // TODO confirmar presença se for QrCode
