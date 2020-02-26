@@ -26,7 +26,7 @@ Contém uma plataforma onde o visitante pode se cadastrar nas palestras disponí
 - Acesse a página principal.
 - Se cadastre.
 - Insira seus dados corretamente e prossiga.
-- Marque as palestras de seu interesse e clique em escolher palestras.
+- Marque as palestras de seu interesse e confirme as palestras.
 - Pronto, você já está inscrito.
 - Observação: Você deverá confirmar presença na hora da palestra e seu certificado estará disponível.
 
