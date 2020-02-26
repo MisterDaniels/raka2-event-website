@@ -26,14 +26,14 @@ Contém uma plataforma onde o visitante pode se cadastrar nas palestras disponí
 - Acesse a página principal.
 - Se cadastre.
 - Insira seus dados corretamente e prossiga.
-- Marque as palestras de seu interesse e clique em escolher palestras.
+- Marque as palestras de seu interesse e confirme as palestras.
 - Pronto, você já está inscrito.
 - Observação: Você deverá confirmar presença na hora da palestra e seu certificado estará disponível.
 
 #### Pegando seu Certificado:
 - Acesse a página principal.
 - Insira seu CPF e entre.
-- Pronto. Você será redirecionado e poderá baixar seus certificados de participação.
+- Pronto, você será redirecionado e poderá baixar seus certificados de participação.
 - Observação: Cique no botão para baixar o certificado.
 
 ## DESENVOLVEDOR <a name="id_02"></a>
@@ -74,3 +74,9 @@ Rode os comandos abaixo:
 #### Diagrama de Classes:
 
 ![diagramaDeClasses](https://ap.imagensbrasil.org/images/2020/02/25/Diagrama.png)
+
+#### Diagrama de Atividades:
+![login](https://ap.imagensbrasil.org/images/2020/02/25/Sem-titulo.png)
+![cadastroVisitantes](https://ap.imagensbrasil.org/images/2020/02/25/cadastroVisitantes.png)
+![certificado](https://ap.imagensbrasil.org/images/2020/02/25/certificado.jpg)
+![cadastroPalestra](https://ap.imagensbrasil.org/images/2020/02/25/cadastroPalestra.jpg)
