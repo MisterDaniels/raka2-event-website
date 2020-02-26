@@ -88,9 +88,9 @@ module.exports = {
         // visitantePalestra.dataValues.presente = true;
 
         if (palestra) {
-            return res.redirect('/certificado?certificado-novo=true');
+            return res.redirect(`/certificado?usuario=${visitante.dataValues.id}&certificado-novo=true`);
         } else {
-            return res.redirect('/certificado');
+            return res.redirect(`/certificado?usuario=${visitante.dataValues.id}`);
         }
     }
 }

@@ -1,19 +1,14 @@
-const VisitantePalestra = require('../../models/VisitantePalestra');
+const Palestra = require('../../models/Palestra');
+const Visitante = require('../../models/Visitante');
 
 module.exports = {
     async get(req, res) {
         const userId = req.query.usuario;
         
-        // let visitantePalestra = await Visitante.findByPk(userId, {
-        //     include: [{   
-        //         association: 'palestras', 
-        //         through:{ attributes: []},
-        //         where: {
-        //             presente: true
-        //         }
-        //     }]
-        // });
+        let visitante = await Visitante.findByPk(userId);
 
-        return res.render('certificado/lista');
+        let palestras = await Palestra.findAll();
+
+        return res.render('certificado/lista', {palestras, visitante});
     }
 };

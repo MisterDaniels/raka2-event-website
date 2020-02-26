@@ -1,7 +1,5 @@
-<html>
+{% block content %}
 
-<head>
-    <title>Converter uma Tabela para PDF usando JavaScript</title>
     <style>
         table {
             width: 300px;
@@ -17,9 +15,7 @@
             text-align: center;
         }
     </style>
-</head>
 
-<body>
     <div id="tabela">
         <div style="width:800px; height:600px; padding:20px; text-align:center; border: 10px solid #787878">
             <div style="width:750px; height:550px; padding:20px; text-align:center; border: 5px solid #787878">
@@ -31,14 +27,14 @@
                 <br><br>
                 <span style="font-size:20px"><i>Certificamos que</i></span>
                 <br><br>
-                <span style="font-size:25px"><b>{{ Douglas Scaini }}</b></span><br /><br />
-                <span style="font-size:20px"><i>de Cadastro de Pessoa Física número {{ 100.423.119-93 }},</i></span>
+                <span style="font-size:25px"><b>{{ parameters.visitante.nome }}</b></span><br /><br />
+                <span style="font-size:20px"><i>de Cadastro de Pessoa Física número <strong>{{ parameters.visitante.cpf }}</strong>,</i></span>
                 <br />
-                <span style="font-size:20px"><i>participou da palestra {{ Desenvolvimento Sustentável }}</i></span>
+                <span style="font-size:20px"><i>participou da palestra <strong>{{ parameters.palestra.titulo }}</strong></i></span>
                 <br />
                 <span style="font-size:20px"><i>no evento Expo Videira 2020.</i></span> <br /><br /><br />
-                <span style="font-size:17px"><i>Data</i></span><br>
-                {{ Videira, 22 de Fevereiro de 2020 }}<br /><br /><br /><br />
+                <span style="font-size:17px"><i><strong>{{ parameters.palestra.horario }}</strong></i></span><br>
+                <br /><br />
                 <span style="font-size:12px"><b>Documento certificado pela Universidade do Oeste de Santa
                         Catarina</b><br /></span>
                 <span style="width:80px; height:60px;"><img
@@ -47,10 +43,5 @@
             </div>
         </div>
     </div>
-    <p>
-        <input type="button" value="Criar PDF" id="btnImprimir" onclick="CriaPDF()" />
-    </p>
-</body>
-<script src="./gerarPDF.js"></script>
 
-</html>
+{% endblock content %}

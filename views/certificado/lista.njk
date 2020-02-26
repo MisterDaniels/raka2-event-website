@@ -22,10 +22,11 @@
         <div class="row mt-5">
             <div class="col-12">
                 <div class="list-group" id="list-tab" role="tablist">
-                    <a class="list-group-item list-group-item-action active" href="https://cev.fgv.br/sites/cev.fgv.br/files/teste33.pdf" data-toggle="list" role="tab">Palestra 1 <i class="fas fa-download float-right"></i></a>
-                    <a class="list-group-item list-group-item-action" href="https://cev.fgv.br/sites/cev.fgv.br/files/teste33.pdf" data-toggle="list" role="tab">Palestra 2 <i class="fas fa-download float-right"></i></a>
-                    <a class="list-group-item list-group-item-action" href="https://cev.fgv.br/sites/cev.fgv.br/files/teste33.pdf" data-toggle="list" role="tab">Palestra 3 <i class="fas fa-download float-right"></i></a>
-                    <a class="list-group-item list-group-item-action" href="https://cev.fgv.br/sites/cev.fgv.br/files/teste33.pdf" data-toggle="list" role="tab">Palestra 4 <i class="fas fa-download float-right"></i></a>
+                    {% for palestra in palestras %}
+
+                        <a class="list-group-item list-group-item-action" reference="{{ palestra.dataValues.id }}" data-toggle="list" role="tab" style="font-size: 15px;">{{palestra.dataValues.titulo}}<i class="fas fa-download float-right"></i></a>
+                        
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -40,7 +41,23 @@
             if (searchParams.has('certificado-novo')) {
                 $('.alert').show();
             }
+
+            $('.list-group-item').click(function() {
+                w=window.open();
+                w.document.write($(`.certificado[reference=${$(this).attr('reference')}]`).html());
+                w.print();
+            });
         </script>
     </form>
+
+    {% for palestra in palestras %}
+
+        <div class="certificado" reference="{{ palestra.dataValues.id }}" style="display: none;">
+            {% set parameters = { 'visitante': visitante.dataValues,
+                'palestra': palestra.dataValues } %}
+            {% include "../certificado/certificado.njk" %}
+        </div>
+
+    {% endfor %}
 
 {% endblock content %}
