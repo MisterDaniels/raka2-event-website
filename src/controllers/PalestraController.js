@@ -1,4 +1,5 @@
 const Palestra = require('../models/Palestra')
+const Visitante = require('../models/Visitante')
 const sequelize = require('sequelize')
 
 module.exports = {
@@ -35,5 +36,5 @@ module.exports = {
             ]
         })
         return res.render('palestra/mostraPalestra', { palestras })
-    }
+    },
 }

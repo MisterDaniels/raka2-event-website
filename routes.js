@@ -13,6 +13,13 @@ routes.get('/entrar', function (req, res) {
     return res.render('entrar/entrar')
 });
 
+//Modificar!!
+//--------------------------------------------------
+
+routes.get('/test', VisitanteController.test)
+
+//------------------------------------------------
+
 routes.post('/entrar', VisitanteController.index);
 
 routes.get('/cadastro', function (req, res) {

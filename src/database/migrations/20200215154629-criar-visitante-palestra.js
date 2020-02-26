@@ -20,10 +20,6 @@ module.exports = {
           references: { model: 'Visitantes', key: 'id'},
           allowNull: false
         },
-        presente: {
-          type: Sequelize.BOOLEAN,
-          defaultValue: false,
-        }
       })
   },
 

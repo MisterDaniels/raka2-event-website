@@ -22,6 +22,10 @@ module.exports = {
         horario: {
           type: Sequelize.DATE,
           allowNull: false,
+        },
+        presente: {
+          type: Sequelize.BOOLEAN,
+          defaultValue: false,
         }
 
       });

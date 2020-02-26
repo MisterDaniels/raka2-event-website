@@ -76,5 +76,18 @@ module.exports = {
         } else {
             return res.redirect('/certificado');
         }
-    }
+    },
+    //Modificar!!
+    //--------------------------------------------------
+    async test(req, res) {
+        const id = 1
+        const visitante = await Visitante.findByPk(id, {
+            include: [{ association: 'palestras', through:{ attributes: []},
+            where: { presente: true }
+            }]
+        })
+        res.json(visitante)
+    },
+    //--------------------------------------------------
+    
 }
