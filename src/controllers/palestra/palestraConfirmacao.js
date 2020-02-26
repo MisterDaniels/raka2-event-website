@@ -44,16 +44,17 @@ module.exports = {
             });
         }
 
-        // TODO Validar se está na palestra
         try {
-            visitantePalestra = await VisitantePalestra.findOne({
-                where: {
-                    id_palestra: palestra
-                }
+            visitantePalestra = await Visitante.findByPk(visitante.dataValues.id, {
+                include: [{   
+                    association: 'palestras', 
+                    through:{ attributes: []},
+                    where: {
+                        id: palestra
+                    }
+                }]
             });
-            console.log(visitantePalestra);
         } catch(error) {
-            console.log(error);
             return res.json({
                 error: 'Ops, parece que houve um erro interno!'
             });
@@ -67,7 +68,7 @@ module.exports = {
 
         // TODO Confirmar presença na palestra
         return res.json({
-            success: '1'
+            success: 'true'
         });
     }
 }

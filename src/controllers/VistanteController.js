@@ -58,18 +58,34 @@ module.exports = {
         const { cpf } = req.body
         const { palestra } = req.query;
 
-        let containsId = await Visitante.findOne({
+        let visitante = await Visitante.findOne({
             where: {
                 cpf
             }
         })
 
-        if(containsId == undefined){
+        if(!visitante){
             return res.render('entrar/entrar', {erro: 'Este CPF ainda não foi cadastrado!'})
         }
 
-        // TODO confirmar presença se for QrCode
+        if (palestra) {
+            let visitantePalestra = await Visitante.findByPk(visitante.dataValues.id, {
+                include: [{   
+                    association: 'palestras', 
+                    through:{ attributes: []},
+                    where: {
+                        id: palestra
+                    }
+                }]
+            });
 
+            if(!visitantePalestra){
+                return res.render('entrar/entrar', {erro: 'Desulpe, mas parece que você não se cadastrou pra essa palestra!'});
+            }
+        }
+
+        // TODO Confirmar o visitante na palestra se for QrCode
+        // visitantePalestra.dataValues.presente = true;
 
         if (palestra) {
             return res.redirect('/certificado?certificado-novo=true');
