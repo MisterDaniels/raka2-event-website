@@ -76,7 +76,7 @@ Rode os comandos abaixo:
 ![diagramaDeClasses](https://ap.imagensbrasil.org/images/2020/02/25/Diagrama.png)
 
 #### Diagrama de Atividades:
-![login](https://ap.imagensbrasil.org/images/2020/02/25/loginf7d2dd0791b9a34b.jpg)
+![login](https://ap.imagensbrasil.org/images/2020/02/25/Sem-titulo.png)
 ![cadastroVisitantes](https://ap.imagensbrasil.org/images/2020/02/25/cadastroVisitantes.png)
 ![certificado](https://ap.imagensbrasil.org/images/2020/02/25/certificado.jpg)
 ![cadastroPalestra](https://ap.imagensbrasil.org/images/2020/02/25/cadastroPalestra.jpg)
