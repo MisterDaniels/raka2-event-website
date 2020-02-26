@@ -33,7 +33,7 @@ Contém uma plataforma onde o visitante pode se cadastrar nas palestras disponí
 #### Pegando seu Certificado:
 - Acesse a página principal.
 - Insira seu CPF e entre.
-- Pronto. Você será redirecionado e poderá baixar seus certificados de participação.
+- Pronto, você será redirecionado e poderá baixar seus certificados de participação.
 - Observação: Cique no botão para baixar o certificado.
 
 ## DESENVOLVEDOR <a name="id_02"></a>
