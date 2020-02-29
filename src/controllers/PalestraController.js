@@ -30,10 +30,21 @@ module.exports = {
             attributes: [
                 'id',
                 'titulo',
-                [sequelize.fn('to_char', sequelize.col('horario'), 'DD/MM/YYYY HH24:MI'), 'horario'],
+                [sequelize.fn('to_char', sequelize.col('horario'), 'DD/MM/YYYY'), 'horario'],
                 'palestrante'
             ]
         })
         return res.render('palestra/mostraPalestra', { palestras })
+    },
+    async all(req, res) {
+        const palestras = await Palestra.findAll({
+            attributes: [
+                'id',
+                'titulo',
+                'palestrante'
+            ]
+        });
+
+        return res.json({palestras});
     }
 }

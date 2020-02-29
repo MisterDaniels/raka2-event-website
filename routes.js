@@ -40,6 +40,8 @@ routes.get('/palestra', function (req, res) {
 
 routes.post('/palestra', PalestraController.store);
 
+routes.get('/listaPalestras', PalestraController.all);
+
 routes.get('*', function (req, res) {
     return res.render('404');
 });
