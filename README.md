@@ -1,3 +1,5 @@
+[![Hackathon Project](https://img.shields.io/badge/Hackathon-Project-informational.svg)](https://www.facebook.com/events/ser-brf/expo-videira-2020/124577072103521/)
+
 <h1 align="center">
   HACKATON EXPO VIDEIRA 2020
 </h1>
